@@ -17,7 +17,7 @@ main {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background-color: #ff8c6b;
+  background-color: #a9bbb0;
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -79,7 +79,7 @@ form.sign-up-form {
 }
 
 .logo img {
-  width: 27px;
+  width: 127px;
   margin-right: 0.3rem;
 }
 
