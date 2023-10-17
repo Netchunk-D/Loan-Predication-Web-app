@@ -1,0 +1,34 @@
+
+
+.contentdiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 250px;
+    align-items: center;
+}
+.imgdiv{
+    display: flex;
+    width: 225px;
+    box-shadow: 5px 10px 8px 5px #888888;
+    align-items: center;
+}
+.imgsize{
+    padding: 8px;
+    margin: 8px;
+    width: 125px;
+    height: 100px;
+    
+}
+
+.lbtn:hover{
+    background-color: rgb(110, 187, 187);
+
+}
+
+.cbtn{
+    background-color: aquamarine;
+}
+
+.cbtn:hover{
+    background-color: rgb(129, 224, 192);
+}

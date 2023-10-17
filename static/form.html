@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/formstyle.css" />
-    <script src="js/formindex.js" defer></script>
+    <link rel="stylesheet" href="public/css/formstyle.css" />
+    <script src="public/js/formindex.js" defer></script>
     <title>Registraion Form</title>
   </head>
   <body>
-    <form action="#" class="form">
+    <form action="/submit" method = "post" class="form">
       <h1 class="text-center">Registration Form</h1>
       <!-- Progress bar -->
       <div class="progressbar">
@@ -111,9 +111,11 @@
         </div>
         <div class="btns-group">
           <a href="#" class="btn btn-prev">Previous</a>
-          <input type="submit" value="Submit" class="btn" />
         </div>
+        
+        <button type="submit" formaction="/submit" formmethod="post" class="btn btn-prev" > Submit</button>
       </div>
+     
     </form>
   </body>
 </html>
