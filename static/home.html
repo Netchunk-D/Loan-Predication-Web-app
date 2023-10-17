@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Home</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
@@ -39,7 +39,7 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="color: white;">Disabled</a>
               </li>
             </ul>
-            <form class="d-flex">
+            <form class="d-flex" action="/logout" method="post">
               <button class="btn btn-outline-light lbtn" type="submit" style="color: white;">Logout</button>
             </form>
           </div>
@@ -59,6 +59,17 @@
             </form>
         </div>
       </div>
+
+      <div class="card imgdiv" >
+        <img src="/public/img/personal-data.png" class="imgsize card-img-top" >
+        <div class="card-body">
+          <p>Get Personal Loans</p>
+            <form action="/personalform" method="get" class="fm">
+                <button type="submit" class="btn cbtn">Apply Now</button>
+            </form>
+        </div>
+      </div>
+      
     </div>
 
 </body>

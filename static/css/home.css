@@ -2,8 +2,8 @@
 
 .contentdiv{
     display: flex;
-    justify-content: center;
-    margin-top: 250px;
+    justify-content: space-evenly;
+    margin-top: 25vh;
     align-items: center;
 }
 .imgdiv{
@@ -11,6 +11,8 @@
     width: 225px;
     box-shadow: 5px 10px 8px 5px #888888;
     align-items: center;
+    flex-wrap: wrap;
+   margin: 10px;
 }
 .imgsize{
     padding: 8px;
@@ -27,8 +29,14 @@
 
 .cbtn{
     background-color: aquamarine;
+
 }
 
 .cbtn:hover{
     background-color: rgb(129, 224, 192);
+}
+
+.fm{
+    display: flex;
+    justify-content: center;
 }

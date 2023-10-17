@@ -59,9 +59,9 @@ app.post("/submit" , function(req,res){
             "No_secured_loan": 6,
             "No_unsecured_loan": 3,
             "live_loan_amnt_sanctioned_secure": 55000,
-            "Number of times 30 days past due in last 6 months": 0,
-            "Number of times 60 days past due in last 6 months": 0,
-            "Number of times 90 days past due in last 6 months": 0,
+            "Number of times 30 days past due in last 6 months": Number(req.body.past_due),
+            "Number of times 60 days past due in last 6 months": Number(req.body.past_due_1),
+            "Number of times 90 days past due in last 6 months": Number(req.body.past_due_2),
             "Tier": "1"
         }
         
@@ -124,6 +124,15 @@ app.post("/login",function(req,res){
          res.redirect("/");
        }
     }); 
+})
+
+app.post("/logout",function(req,res){
+     req.session.destroy();
+     res.redirect("/home");
+})
+
+app.get("/personalform",function(req,res){
+    res.sendFile(__dirname + "/static" + "/personal_form.html");
 })
 
 app.listen(3000,function(){
