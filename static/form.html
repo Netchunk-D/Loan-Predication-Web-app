@@ -1,119 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="public/css/formstyle.css" />
-    <script src="public/js/formindex.js" defer></script>
-    <title>Registraion Form</title>
-  </head>
-  <body>
-    <form action="#" class="form">
-      <h1 class="text-center">Registration Form</h1>
-      <!-- Progress bar -->
-      <div class="progressbar">
-        <div class="progress" id="progress"></div>
-        
-        <div class="progress-step progress-step-active" data-title="Intro"></div>
-        <div class="progress-step" data-title="Contact"></div>
-        <div class="progress-step" data-title="ID"></div>
-        <div class="progress-step" data-title="Personal"></div>
-        <div class="progress-step" data-title="Password"></div>
-      </div>
 
-      <!-- Steps -->
-      <div class="form-step form-step-active">
-        <div class="input-group">
-          <label for="bounced_1">Bounced_1</label>
-          <input type="number" name="bounced_1" id="bounced_1" />
-        </div>
-        <div class="input-group">
-          <label for="bounced_count">Bounced_count</label>
-          <input type="number" name="bounced_count" id="bounced_count" />
-        </div>
-        <div class="input-group">
-          <label for="mob_tvs">MOB_tvs</label>
-          <input type="number" name="mob_tvs" id="mob_tvs" />
-        </div>
-        <div class="">
-          <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
-        </div>
-      </div>
-      <div class="form-step">
-        <div class="input-group">
-          <label for="bounced_count_repaying">Bounced_count_repaying</label>
-          <input type="text" name="bounced_count_repaying" id="bounced_count_repaying" />
-        </div>
-        <div class="input-group">
-          <label for="emi">EMI</label>
-          <input type="number" name="emi" id="emi"/>
-        </div>
-        <div class="input-group">
-          <label for="loan_amount">Loan_Amount</label>
-          <input type="number" name="loan_amount" id="loan_amount" />
-        </div>
-        <div class="btns-group">
-          <a href="#" class="btn btn-prev">Previous</a>
-          <a href="#" class="btn btn-next">Next</a>
-        </div>
-      </div>
-      <div class="form-step">
-        <div class="input-group">
-          <label for="tenure">Tenure</label>
-          <input type="number" name="tenure" id="tenure" />
-        </div>
-        <div class="input-group">
-          <label for="dealer_code">Dealer_code_two_wheeler</label>
-          <input type="number" name="dealer_code" id="dealer_code" />
-        </div>
-        <div class="input-group">
-          <label for="product_code">Product_code_two_wheeler</label>
-          <input type="number" name="product_code" id="product_code" />
-        </div>
-        <div class="btns-group">
-          <a href="#" class="btn btn-prev">Previous</a>
-          <a href="#" class="btn btn-next">Next</a>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="public/css/formstyle.css" />
+  <script src="public/js/formindex.js" defer></script>
+  <title>Registraion Form</title>
+</head>
 
-      <div class="form-step">
-        <div class="input-group">
-          <label for="no_advanced_emi_paid">No_advanced_emi_paid</label>
-          <input type="number" name="no_advanced_emi_paid" id="no_advanced_emi_paid" />
-        </div>
-        <div class="input-group">
-          <label for="rate_interest">Rate_intrest</label>
-          <input type="number" name="rate_interest" id="rate_interest" />
-        </div>
-        <div class="input-group">
-          <label for="gender">Gender</label>
-          <input type="number" name="gender" id="gender" />
-        </div>
-        <div class="btns-group">
-          <a href="#" class="btn btn-prev">Previous</a>
-          <a href="#" class="btn btn-next">Next</a>
-        </div>
-      </div>
+<body>
+  <form action="#" class="form">
+    <h1 class="text-center">Registration Form</h1>
+    <!-- Progress bar -->
+    <div class="progressbar">
+      <div class="progress" id="progress"></div>
 
-      <div class="form-step">
-        <div class="input-group">
-          <label for="emp_type">Employability_type</label>
-          <input type="number" name="emp_type" id="emp_type" />
-        </div>
-        <div class="input-group">
-          <label for="age">Age</label>
-          <input
-            type="number"
-            name="age"
-            id="age"
-          />
-        </div>
-        <div class="btns-group">
-          <a href="#" class="btn btn-prev">Previous</a>
-          <input type="submit" value="Submit" class="btn" />
-        </div>
+      <div class="progress-step progress-step-active" data-title="Personal"></div>
+      <div class="progress-step" data-title="Regarding Loan"></div>
+      <div class="progress-step" data-title="Regarding Bike"></div>
+      <div class="progress-step" data-title="Previous Loan-Record"></div>
+      <div class="progress-step" data-title="Previous Loan Record"></div>
+      <div class="progress-step" data-title="Installment Record"></div>
+      <div class="progress-step" data-title="TVS Prev Record"></div>
+    </div>
+
+    <!-- Steps -->
+    <div class="form-step form-step-active">
+      <div class="input-group">
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" />
       </div>
-    </form>
-  </body>
+      <div class="input-group">
+        <label for="gender">Gender</label>
+        <input type="number" name="gender" id="gender" />
+      </div>
+      <div class="input-group">
+        <label for="emp_type">Employability_type</label>
+        <input type="number" name="emp_type" id="emp_type" />
+      </div>
+      <div class="">
+        <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+      </div>
+    </div>
+
+    <div class="form-step">
+      <div class="input-group">
+        <label for="emi">EMI</label>
+        <input type="number" name="emi" id="emi" />
+      </div>
+      <div class="input-group">
+        <label for="loan_amount">Loan_Amount</label>
+        <input type="number" name="loan_amount" id="loan_amount" />
+      </div>
+      <div class="input-group">
+        <label for="bounced_count_repaying">Bounced_count_repaying</label>
+        <input type="text" name="bounced_count_repaying" id="bounced_count_repaying" />
+      </div>
+      <div class="btns-group">
+        <a href="#" class="btn btn-prev">Previous</a>
+        <a href="#" class="btn btn-next">Next</a>
+      </div>
+    </div>
+
+    <div class="form-step">
+      <div class="input-group">
+        <label for="tenure">Tenure</label>
+        <input type="number" name="tenure" id="tenure" />
+      </div>
+      <div class="input-group">
+        <label for="dealer_code">Dealer_code_two_wheeler</label>
+        <input type="number" name="dealer_code" id="dealer_code" />
+      </div>
+      <div class="input-group">
+        <label for="product_code">Product_code_two_wheeler</label>
+        <input type="number" name="product_code" id="product_code" />
+      </div>
+      <div class="btns-group">
+        <a href="#" class="btn btn-prev">Previous</a>
+        <a href="#" class="btn btn-next">Next</a>
+      </div>
+    </div>
+
+    <div class="form-step">
+      <div class="input-group">
+        <label for="no_loans">No of loans</label>
+        <input type="number" name="no_loans" id="no_loans" />
+      </div>
+      <div class="input-group">
+        <label for="rate_interest">Rate_intrest</label>
+        <input type="number" name="rate_interest" id="rate_interest" />
+      </div>
+      <div class="input-group">
+        <label for="no_advanced_emi_paid">No_advanced_emi_paid</label>
+        <input type="number" name="no_advanced_emi_paid" id="no_advanced_emi_paid" />
+      </div>
+      <div class="btns-group">
+        <a href="#" class="btn btn-prev">Previous</a>
+        <a href="#" class="btn btn-next">Next</a>
+      </div>
+    </div>
+
+    <div class="form-step">
+      <div class="input-group">
+        <label for="no_secured_loan">No_secured_loan</label>
+        <input type="number" name="no_secured_loan" id="no_secured_loan" />
+      </div>
+      <div class="input-group">
+        <label for="no_unsecured_loan">No_unsecured_loan</label>
+        <input type="number" name="no_unsecured_loan" id="no_unsecured_loan" />
+      </div>
+      <div class="input-group">
+        <label for="live_loan_amnt_sanctioned_secure">Live_loan_amnt_sanctioned_secure</label>
+        <input type="number" name="live_loan_amnt_sanctioned_secure" id="live_loan_amnt_sanctioned_secure" />
+      </div>
+      <div class="btns-group">
+        <a href="#" class="btn btn-prev">Previous</a>
+        <a href="#" class="btn btn-next">Next</a>
+      </div>
+    </div>
+
+    <div class="form-step">
+      <div class="input-group">
+        <label for="past_due">No of times 30 days past due in last 6 months</label>
+        <input type="number" name="past_due" id="past_due" />
+      </div>
+      <div class="input-group">
+        <label for="past_due_1">Number of times 60 days past due in last 6 months</label>
+        <input type="number" name="past_due_1" id="past_due_1" />
+      </div>
+      <div class="input-group">
+        <label for="past_due_2">Number of times 90 days past due in last 6 months</label>
+        <input type="number" name="past_due_2" id="past_due_2" />
+      </div>
+      <div class="btns-group">
+        <a href="#" class="btn btn-prev">Previous</a>
+        <a href="#" class="btn btn-next">Next</a>
+      </div>
+    </div>
+
+    <div class="form-step">
+      <div class="input-group">
+        <label for="bounced_1">Bounced_1</label>
+        <input type="number" name="bounced_1" id="bounced_1" />
+      </div>
+      <div class="input-group">
+        <label for="bounced_count">Bounced_count</label>
+        <input type="number" name="bounced_count" id="bounced_count" />
+      </div>
+      <div class="input-group">
+        <label for="mob_tvs">MOB_tvs</label>
+        <input type="number" name="mob_tvs" id="mob_tvs" />
+      </div>
+      <div class="btns-group">
+        <a href="#" class="btn btn-prev">Previous</a>
+        <input type="submit" value="Submit" class="btn" />
+      </div>
+    </div>
+  </form>
+</body>
+
 </html>
