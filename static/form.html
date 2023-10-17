@@ -18,12 +18,12 @@
       <div class="progress" id="progress"></div>
 
       <div class="progress-step progress-step-active" data-title="Personal"></div>
-      <div class="progress-step" data-title="Regarding Loan"></div>
-      <div class="progress-step" data-title="Regarding Bike"></div>
-      <div class="progress-step" data-title="Previous Loan-Record"></div>
-      <div class="progress-step" data-title="Previous Loan Record"></div>
-      <div class="progress-step" data-title="Installment Record"></div>
-      <div class="progress-step" data-title="TVS Prev Record"></div>
+      <div class="progress-step" data-title="Loan"></div>
+      <div class="progress-step" data-title="Bike"></div>
+      <div class="progress-step" data-title="Previous Loan"></div>
+      <div class="progress-step" data-title="Previous Loan"></div>
+      <div class="progress-step" data-title="Installment Paid"></div>
+      <div class="progress-step" data-title="Prev Record"></div>
     </div>
 
     <!-- Steps -->
@@ -90,7 +90,7 @@
       </div>
       <div class="input-group">
         <label for="rate_interest">Rate_intrest</label>
-        <input type="number" name="rate_interest" id="rate_interest" />
+        <input type="number" min="0" max="1000" step="0.01" name="rate_interest" id="rate_interest" />
       </div>
       <div class="input-group">
         <label for="no_advanced_emi_paid">No_advanced_emi_paid</label>
