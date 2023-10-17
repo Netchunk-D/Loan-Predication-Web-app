@@ -98,11 +98,12 @@
   
   /* Form */
   .form {
-    width: clamp(320px, 30%, 430px);
+    width: clamp(700px, 30%, 430px);
     margin: 0 auto;
     border: 1px solid #ccc;
     border-radius: 0.35rem;
     padding: 1.5rem;
+box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   }
   
   .form-step {
