@@ -37,7 +37,7 @@ app.get("/submit" , function(req,res){
 });
 
 app.post("/submit" , function(req,res){
-    console.log(Number(req.body.bounced_1));
+   
     async function getdata(){
         
         var clientdata = {
@@ -51,14 +51,14 @@ app.post("/submit" , function(req,res){
             "Dealer_code_two_wheeler": Number(req.body.dealer_code),
             "Product_code_two_wheeler": req.body.product_code,
             "No_advanced_emi_paid": Number(req.body.no_advanced_emi_paid),
-            "Rate_intrest": Number(req.body.rate_interest),
+            "Rate_intrest":parseFloat(req.body.rate_interest),
             "Gender": req.body.gender,
             "Employability_type": req.body.emp_type,
             "Age": Number(req.body.age),
-            "No_loans": 9,
-            "No_secured_loan": 6,
-            "No_unsecured_loan": 3,
-            "live_loan_amnt_sanctioned_secure": 55000,
+            "No_loans": Number(req.body.no_loans),
+            "No_secured_loan":Number(req.body.no_secured_loan),
+            "No_unsecured_loan": Number(req.body.no_unsecured_loan),
+            "live_loan_amnt_sanctioned_secure": Number(req.body.live_loan_amnt_sanctioned_secure),
             "Number of times 30 days past due in last 6 months": Number(req.body.past_due),
             "Number of times 60 days past due in last 6 months": Number(req.body.past_due_1),
             "Number of times 90 days past due in last 6 months": Number(req.body.past_due_2),
@@ -67,10 +67,16 @@ app.post("/submit" , function(req,res){
         
     const result = await axios.post('http://127.0.0.1:5000/predict', clientdata);
     console.log(result.data);
-    res.send(result.data);
+    if(result.data.prediction==1){
+        res.sendFile(__dirname + "/static" + "/noteligible.html");
     }
+    else{
+        res.sendFile(__dirname + "/static" + "/eligible.html");
 
-   getdata();
+    }
+    }
+   if(req.session.authorized) getdata();
+   else res.redirect("/");
     
 });
 
@@ -127,12 +133,63 @@ app.post("/login",function(req,res){
 })
 
 app.post("/logout",function(req,res){
+    if(req.session.authorized){
      req.session.destroy();
+    }
      res.redirect("/home");
 })
 
 app.get("/personalform",function(req,res){
-    res.sendFile(__dirname + "/static" + "/personal_form.html");
+    if(req.session.authorized){
+    res.sendFile(__dirname + "/static" + "/Personal_form.html");
+    }
+    else{
+        res.redirect("/");
+    }
+})
+
+app.post("/personalform",function(req,res){
+    if(req.session.authorized){
+        async function getdata(){
+        
+            var clientdata = {
+                "RevolvingUtilizationOfUnsecuredLines": parseFloat(req.body.revolving_utilization), 
+                "age": Number(req.body.age),
+                "NumberOfTime30-59DaysPastDueNotWorse": Number(req.body.past_due), 
+                "DebtRatio": parseFloatr(req.body.deb_ratio), 
+                "MonthlyIncome": Number(req.body.monthly_income), 
+                "NumberOfOpenCreditLinesAndLoans": Number(req.body.credit_lines), 
+                "NumberOfTimes90DaysLate":Number(req.body.past_due_2), 
+                "NumberRealEstateLoansOrLines": Number(req.body.real_estate),
+                 "NumberOfTime60-89DaysPastDueNotWorse": Number(req.body.past_due_1), 
+                 "NumberOfDependents": Number(req.body.no_of_dependents)
+            }
+            
+        const result = await axios.post('http://127.0.0.1:5001/predict', clientdata);
+        console.log(result.data);
+        // if(result.data==1){
+        //     res.sendFile(__dirname + "/static" + "/noteligible.html");
+        // }
+        // else{
+        //     res.sendFile(__dirname + "/static" + "/eligible.html");
+
+        // }
+        if(result.data.voted_result[0]==1){
+            res.sendFile(__dirname + "/static" + "/noteligible.html");
+        }
+        else{
+            res.sendFile(__dirname + "/static" + "/eligible.html");
+            
+        }
+        //res.send(result.data.voted_result[0]);
+        }
+
+        getdata();
+        
+    }
+    else{
+        res.redirect("/");
+    }
 })
 
 app.listen(3000,function(){
@@ -166,3 +223,10 @@ app.listen(3000,function(){
 //     "Number of times 90 days past due in last 6 months": 0,
 //     "Tier": "1"
 // }
+
+// { "RevolvingUtilizationOfUnsecuredLines": 0.964673, 
+// "age": 40,
+//  "NumberOfTime30-59DaysPastDueNotWorse": 3, 
+// "DebtRatio": 0.382965, "MonthlyIncome": 13700, 
+// "NumberOfOpenCreditLinesAndLoans": 9, "NumberOfTimes90DaysLate": 3, 
+// "NumberRealEstateLoansOrLines": 1, "NumberOfTime60-89DaysPastDueNotWorse": 1, "NumberOfDependents": 2 }
