@@ -156,7 +156,7 @@ app.post("/personalform",function(req,res){
                 "RevolvingUtilizationOfUnsecuredLines": parseFloat(req.body.revolving_utilization), 
                 "age": Number(req.body.age),
                 "NumberOfTime30-59DaysPastDueNotWorse": Number(req.body.past_due), 
-                "DebtRatio": parseFloatr(req.body.deb_ratio), 
+                "DebtRatio": parseFloat(req.body.deb_ratio), 
                 "MonthlyIncome": Number(req.body.monthly_income), 
                 "NumberOfOpenCreditLinesAndLoans": Number(req.body.credit_lines), 
                 "NumberOfTimes90DaysLate":Number(req.body.past_due_2), 
@@ -167,13 +167,6 @@ app.post("/personalform",function(req,res){
             
         const result = await axios.post('http://127.0.0.1:5001/predict', clientdata);
         console.log(result.data);
-        // if(result.data==1){
-        //     res.sendFile(__dirname + "/static" + "/noteligible.html");
-        // }
-        // else{
-        //     res.sendFile(__dirname + "/static" + "/eligible.html");
-
-        // }
         if(result.data.voted_result[0]==1){
             res.sendFile(__dirname + "/static" + "/noteligible.html");
         }
